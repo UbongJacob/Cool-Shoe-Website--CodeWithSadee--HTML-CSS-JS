@@ -182,6 +182,39 @@ body {
   --border-color: hsla(0, 0%, 0%, 0.1);
 }
 
+.has-scrollbar {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-snap-type: inline mandatory;
+}
+
+.has-scrollbar > li {
+  min-width: 100%;
+  scroll-snap-align: start;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+  height: 10px;
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+  background: var(--white);
+  border-radius: 20px;
+  outline: 2px solid var(--bittersweet);
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--bittersweet);
+  border: 2px solid var(--white);
+  border-radius: 20px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button {
+  width: calc(25%)-40px;
+}
+
 /* HEADER */
 
 .header {
@@ -377,4 +410,18 @@ body {
   line-height: 1.8;
   max-width: 46ch;
   margin-bottom: 25px;
+}
+
+/* COLLECTIONS */
+
+.collection-card {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 45px 25px;
 }
